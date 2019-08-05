@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cube">
+            <div class="mini"></div>
+            <div class="mini"></div>
+            <div class="mini"></div>
+            <div class="mini"></div>
+            <div class="mini"></div>
+            <div class="mini"></div>
+            <div class="inside"></div>
+            <div class="inside"></div>
+            <div class="inside"></div>
+            <div class="inside"></div>
+        </div>
+    </div>
+</body>
+<script>
+let transform=20;
+const container=document.querySelector('.container');
+const cuber=document.querySelector('.cube');
+const div=document.querySelector('.cube');
+
+container.addEventListener('click',e =>{
+    transform+=60;
+    cuber.style.transform=`rotateY(-${transform}deg) rotateX(20deg)`;
+});
+cuber.addEventListener('mouseover',e =>{
+    div.children[0].style.transform='translateZ(40vh)';
+    div.children[1].style.transform='rotateY(90deg) translateZ(40vh)';
+    div.children[2].style.transform='rotateY(180deg) translateZ(40vh)';
+    div.children[3].style.transform='rotateY(-90deg) translateZ(40vh)';
+    div.children[4].style.transform='rotateX(90deg) translateZ(40vh)';
+    div.children[5].style.transform='rotateX(-90deg) translateZ(40vh)';
+    div.children[6].style.height='40vh';
+    div.children[7].style.height='40vh';
+    div.children[8].style.height='40vh';
+    div.children[9].style.height='40vh';
+});
+div.addEventListener('mouseout',e =>{
+    div.children[0].style.transform='translateZ(15vh)';
+    div.children[1].style.transform='rotateY(90deg) translateZ(15vh)';
+    div.children[2].style.transform='rotateY(180deg) translateZ(15vh)';
+    div.children[3].style.transform='rotateY(-90deg) translateZ(15vh)';
+    div.children[4].style.transform='rotateX(90deg) translateZ(15vh)';
+    div.children[5].style.transform='rotateX(-90deg) translateZ(15vh)';
+    div.children[6].style.height='25vh';
+    div.children[7].style.height='25vh';
+    div.children[8].style.height='25vh';
+    div.children[9].style.height='25vh';
+    
+
+});
+</script>
+</html>
